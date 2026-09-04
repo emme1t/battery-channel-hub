@@ -233,10 +233,17 @@ export function upsertChannelState(state, command) {
   if (before && identity.key !== before.key && recordsReferenceAny(state, [before.key])) {
     throw domainError('CHANNEL_REFERENCED_RENAME_BLOCK', '通道已有使用记录，不能改名或移动设备');
   }
+  let endOwner = null;
   if (before && ACTIVE_CHANNEL_STATES.has(before.state)) {
     const pointer = before.state === 'busy' ? before.currentRecordId : before.nextRecordId;
-    const record = state.records.find(item => String(item?.id || '') === String(pointer || ''))
-      ?? state.records.find(item => activeRecord(item) && recordKeys(item).includes(before.key));
+    const status = before.state === 'busy' ? 'running' : 'reserved';
+    const owners = state.records.filter(item => String(item?.status || '') === status && recordKeys(item).includes(before.key)
+      && (!pointer || String(item.id) === String(pointer)));
+    if (Object.hasOwn(input, 'end') && before.end !== input.end && owners.length !== 1) {
+      throw domainError('ACTIVE_CHANNEL_RECORD_AMBIGUOUS', '活动通道缺少唯一所属记录，不能修改结束时间');
+    }
+    const record = owners[0];
+    endOwner = record?.id;
     const endText = String(input.end ?? '').trim();
     if (endText !== '') {
       const start = Date.parse(record?.actualStart ?? record?.start ?? record?.time ?? '');
@@ -268,11 +275,10 @@ export function upsertChannelState(state, command) {
   if (found.index >= 0) next.channels[found.index] = replacement;
   else next.channels.push(replacement);
   if (before && ACTIVE_CHANNEL_STATES.has(before.state) && before.end !== replacement.end) {
-    for (const record of next.records.filter(item => activeRecord(item) && recordKeys(item).includes(before.key))) {
-      record.end = replacement.end || '';
-      const sample = next.samples.find(item => item.id === record.sampleId);
-      if (sample) sample.end = replacement.end || '';
-    }
+    const record = next.records.find(item => item.id === endOwner);
+    record.end = replacement.end || '';
+    const sample = next.samples.find(item => item.id === record.sampleId);
+    if (sample) sample.end = replacement.end || '';
   }
   next.auditLogs.unshift(audit(
     metadata,

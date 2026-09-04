@@ -26,6 +26,9 @@
   const selectedRequestIds = new Set();
   const html = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
+  // URI encoding alone leaves apostrophes intact inside inline JavaScript strings.
+  const inlineId = value => encodeURIComponent(value).replace(/'/g, '%27');
+
   function appendFormChange(action, requestId, before, after, note = '') {
     const source = after || before || {};
     formChangeJournal.push({
@@ -92,7 +95,7 @@
     ensureTesterPage();
     const box = document.getElementById('testerTable');
     if (!box) return;
-    box.innerHTML = testers.length ? `<table class="table management-table"><thead><tr><th>姓名</th><th>部门</th><th>联系方式</th><th>状态</th><th>备注</th><th>操作</th></tr></thead><tbody>${testers.map(item => `<tr><td><b>${html(item.name)}</b></td><td>${html(item.dept)}</td><td>${html(item.phone)}</td><td>${html(businessStatusLabel(item.status || 'enabled'))}</td><td>${html(item.note)}</td><td><button class="mini-btn" onclick="openTesterEditor('${encodeURIComponent(item.id)}')">编辑</button><button class="mini-btn danger" onclick="deleteTester('${encodeURIComponent(item.id)}')">删除</button></td></tr>`).join('')}</tbody></table>` : '<div class="empty">暂无测试人员，请先新增名单</div>';
+    box.innerHTML = testers.length ? `<table class="table management-table"><thead><tr><th>姓名</th><th>部门</th><th>联系方式</th><th>状态</th><th>备注</th><th>操作</th></tr></thead><tbody>${testers.map(item => `<tr><td><b>${html(item.name)}</b></td><td>${html(item.dept)}</td><td>${html(item.phone)}</td><td>${html(businessStatusLabel(item.status || 'enabled'))}</td><td>${html(item.note)}</td><td><button class="mini-btn" onclick="openTesterEditor('${inlineId(item.id)}')">编辑</button><button class="mini-btn danger" onclick="deleteTester('${inlineId(item.id)}')">删除</button></td></tr>`).join('')}</tbody></table>` : '<div class="empty">暂无测试人员，请先新增名单</div>';
     renderTesterOptions();
   }
 
@@ -192,8 +195,8 @@
       const execution = r.execution && typeof r.execution === 'object' ? r.execution : {};
       const tester = execution.tester ?? r.tester ?? '';
       const plannedEnd = execution.plannedEnd ?? r.end ?? '';
-      const reserveButton = mode === 'pick' ? `<button class="link-btn" onclick="selectReq('${encodeURIComponent(r.id)}')">预约 →</button>` : '';
-      return `<tr><td><input class="request-check" type="checkbox" value="${html(r.id)}" ${selectedRequestIds.has(String(r.id)) ? 'checked' : ''}></td><td><b>${html(r.id)}</b></td><td>${html(r.test)}</td><td>${html(r.project)}</td><td>${html(r.sample)}</td><td>${html(r.qty || 0)} 块</td><td>${html(r.client)}<br><small>${html(r.dept)}</small></td><td>${html(tester)}</td><td>${html(displayLocalDateTime(plannedEnd))}</td><td>${reserveButton}<button class="link-btn" onclick="editRequest('${encodeURIComponent(r.id)}')">编辑</button><button class="link-btn danger-link" onclick="deleteRequest('${encodeURIComponent(r.id)}')">删除</button></td></tr>`;
+      const reserveButton = mode === 'pick' ? `<button class="link-btn" onclick="selectReq('${inlineId(r.id)}')">预约 →</button>` : '';
+      return `<tr><td><input class="request-check" type="checkbox" value="${html(r.id)}" ${selectedRequestIds.has(String(r.id)) ? 'checked' : ''}></td><td><b>${html(r.id)}</b></td><td>${html(r.test)}</td><td>${html(r.project)}</td><td>${html(r.sample)}</td><td>${html(r.qty || 0)} 块</td><td>${html(r.client)}<br><small>${html(r.dept)}</small></td><td>${html(tester)}</td><td>${html(displayLocalDateTime(plannedEnd))}</td><td>${reserveButton}<button class="link-btn" onclick="editRequest('${inlineId(r.id)}')">编辑</button><button class="link-btn danger-link" onclick="deleteRequest('${inlineId(r.id)}')">删除</button></td></tr>`;
     }).join('');
   }
   renderRequestTable = function() {
@@ -1062,7 +1065,13 @@
     };
   }
 
-  function adoptApplicationState(state) {
+  function adoptApplicationState(state, preserveLocalAudits = true) {
+    // All command families share this adoption path. Navigation may have appended
+    // audit entries while IPC was pending; keep them for the next renderer save.
+    if (preserveLocalAudits) {
+      const ids = new Set((state?.auditLogs || []).map(item => item.id));
+      state = { ...state, auditLogs: [...auditLogs.filter(item => !ids.has(item.id)), ...(state?.auditLogs || [])] };
+    }
     requests = Array.isArray(state?.requests) ? state.requests : [];
     samples = Array.isArray(state?.samples) ? state.samples : [];
     channels = Array.isArray(state?.channels) ? state.channels : [];
@@ -1097,7 +1106,7 @@
     }
     if (!result?.ok) {
       if (result?.code === 'REVISION_CONFLICT') {
-        try { adoptApplicationState(await desktop.loadState()); } catch {}
+        try { adoptApplicationState(await desktop.loadState(), false); } catch {}
       }
       toast(result?.message || '管理操作被阻断，状态未修改');
       return result || { ok: false, code: 'APPLICATION_COMMAND_FAILED' };
@@ -1591,7 +1600,7 @@
       result = { ok: false, code: error?.code || 'RESTORE_FAILED', message: error?.message || '恢复失败' };
     }
     if (result.ok) {
-      adoptApplicationState(result.state);
+      adoptApplicationState(result.state, false);
       toast('数据恢复成功；恢复前备份与恢复后 SQLite 均已校验');
       return;
     }

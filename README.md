@@ -41,6 +41,14 @@ npm test
 
 部分 Electron、Edge、工作流和性能测试运行时间较长，并会在被忽略的本地目录中生成证据。测试成功必须以目标提交上的新鲜命令输出为准，不能用历史报告代替。
 
+`npm test`、`test:core` 和 Edge 回归命令会先执行 `fixtures:prepare`，从版本化压缩文件补齐 v0.4.2/v0.4.3 合成测试数据，并按原始 `SHA256SUMS.json` 校验。已有母版或清单不会被覆盖；已有文件哈希不符时停止并报错。真实运行数据库仍然不入库。直接运行依赖这些数据的 Node 测试前，可手动执行 `npm run fixtures:prepare`。
+
+本次代码审查修复的定向 Electron 回归：
+
+```powershell
+npm run test:electron:review
+```
+
 ## Windows 打包
 
 ```powershell

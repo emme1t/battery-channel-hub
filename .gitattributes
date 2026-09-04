@@ -13,6 +13,7 @@
 *.pptx binary
 *.asar binary
 *.exe binary
+*.gz binary
 
 # 人工回归夹具由 SHA256SUMS.json 校验，禁止换行或文本过滤改变字节。
 /人工回归数据包/v0.4.2/** -text

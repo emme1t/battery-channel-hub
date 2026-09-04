@@ -158,6 +158,7 @@ function findAssignmentEntities(state, command) {
   }
   const channel = state.channels.find(item => item?.key === command.channelKey);
   if (!channel) throw domainError('CHANNEL_NOT_FOUND', '通道不存在');
+  requireEnabledDevice(state, channel);
   if (
     state.records.some(item => String(item?.id || '') === command.recordId) ||
     state.auditLogs.some(item => String(item?.id || '') === command.auditId)
@@ -165,6 +166,13 @@ function findAssignmentEntities(state, command) {
     throw domainError('IDENTIFIER_ALREADY_EXISTS', '使用记录或审计标识已存在');
   }
   return { request, requestNo, sample, channel };
+}
+
+function requireEnabledDevice(state, channel) {
+  if ((state.deviceProfiles || []).some(device => device.status === 'disabled'
+    && String(device.name) === String(channel.device))) {
+    throw domainError('DISABLED_DEVICE_CHANNEL_BLOCK', '停用设备的通道不能恢复、预约或开始测试');
+  }
 }
 
 function assignmentAudit({ command, mode, request, sample, channel, nextChannel, policy }) {
@@ -437,6 +445,7 @@ export function transitionLegacyChannel(state, command) {
   }
   const originalChannel = state.channels.find(item => item?.key === command.channelKey);
   if (!originalChannel) throw domainError('CHANNEL_NOT_FOUND', '通道不存在');
+  if (command.action === 'recover' || command.action === 'start') requireEnabledDevice(state, originalChannel);
 
   let transitionOwner = null;
   if (command.action === 'end') {

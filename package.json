@@ -7,6 +7,12 @@
   "private": true,
   "scripts": {
     "start": "electron .",
+    "fixtures:prepare": "node scripts/prepare-regression-assets.mjs",
+    "pretest": "npm run fixtures:prepare",
+    "pretest:core": "npm run fixtures:prepare",
+    "pretest:edge:quick": "npm run fixtures:prepare",
+    "pretest:edge:full": "npm run fixtures:prepare",
+    "test:electron:review": "node --test --test-concurrency=1 tests/electron-review/*.test.mjs",
     "test": "node --test --test-concurrency=1",
     "test:core": "node --test --test-concurrency=1 tests/*.test.mjs",
     "test:smoke": "node tests/smoke/full-shell-smoke.mjs",

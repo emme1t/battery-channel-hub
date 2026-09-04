@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:">
+  <title>电池测试通道预约与使用看板</title>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">BC</span>
+        <strong>Battery Channel Hub</strong>
+      </div>
+      <div class="user-summary">
+        <span>当前用户</span>
+        <strong id="current-user">读取中</strong>
+      </div>
+    </header>
+    <aside class="sidebar" aria-label="主导航">
+      <nav>
+        <div class="nav-group">
+          <span>工作台</span>
+          <button class="nav-item is-active" type="button">开始/预约测试</button>
+          <button class="nav-item" type="button" disabled>通道看板</button>
+        </div>
+        <div class="nav-group">
+          <span>数据与申请</span>
+          <button class="nav-item" type="button" disabled>测试申请表格</button>
+          <button class="nav-item" type="button" disabled>日志</button>
+        </div>
+        <div class="nav-group">
+          <span>设备资源</span>
+          <button class="nav-item" type="button" disabled>设备与通道</button>
+        </div>
+      </nav>
+      <div class="sidebar-note">当前里程碑仅开放预约核心流程</div>
+    </aside>
+    <main class="main-content">
+      <header class="page-heading">
+        <div>
+          <h1>开始/预约测试</h1>
+          <p>先从申请列表选择任务。右侧面板只在预约时打开。</p>
+        </div>
+        <div class="page-rule">一通道一件样品</div>
+      </header>
+      <div id="reservation-root" class="reservation-root" aria-live="polite">
+        <div class="loading-state" role="status">
+          <span></span><span></span><span></span>
+          <strong>正在读取本机数据</strong>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

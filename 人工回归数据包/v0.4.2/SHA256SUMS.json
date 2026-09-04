@@ -1,0 +1,214 @@
+{
+  "version": "v0.4.2",
+  "generatedAt": "2026-08-21T10:00:00.000Z",
+  "root": "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2",
+  "activeCandidateDatabase": "C:\\Users\\Administrator\\AppData\\Roaming\\battery-channel-hub\\data\\battery-channel-hub.sqlite",
+  "safety": {
+    "mastersAreReadOnlyInputs": true,
+    "applicationMustBeClosedBeforeSqliteReplacement": true,
+    "formalDataForbidden": true
+  },
+  "summaries": {
+    "baseline": {
+      "revision": 1,
+      "devices": 26,
+      "channels": 529,
+      "requests": 0,
+      "samples": 0,
+      "records": 0
+    },
+    "workflow": {
+      "revision": 1,
+      "devices": 26,
+      "channels": 529,
+      "requests": 6,
+      "samples": 10,
+      "records": 3
+    },
+    "switchOldSha256": "bcbaadb1aeb0a26eb1e5ad9ee97f2de838c09a15021daaff8ad4d508dedd0206",
+    "switchCandidateSha256": "b66f4fb44b968edf1bdee15bc689c45b2dc73699e3b80022c81f8712ecbfd525"
+  },
+  "scenarioPackages": {
+    "P0-01": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite",
+      "C:\\Users\\Administrator\\AppData\\Roaming\\battery-channel-hub\\data\\battery-channel-hub.sqlite"
+    ],
+    "P0-02": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite"
+    ],
+    "P0-03": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\03-数量边界-1.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\04-数量边界-999.xlsx"
+    ],
+    "P0-04": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\05-数量非法-0.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\06-数量非法-1000.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\07-数量非法-小数.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\08-数量非法-非数字.xlsx"
+    ],
+    "P0-05": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\09-多样品原子预约.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-06": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-07": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-08": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\01-纵向申请单-原始字段.xlsx"
+    ],
+    "P0-09": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\10-覆盖导入-原版.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\11-覆盖导入-新版.xlsx"
+    ],
+    "P0-10": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\13-文件夹混合导入"
+    ],
+    "P0-11": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-12": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-13": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-14": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P0-15": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\失败路径\\只读目录",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\失败路径\\not-a-directory.blocker"
+    ],
+    "P0-16": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\运行输出\\备份"
+    ],
+    "P0-17": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\备份\\02-篡改校验失败.batterydata"
+    ],
+    "P0-18": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\备份\\01-正常恢复包.batterydata",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\运行输出\\恢复前备份"
+    ],
+    "P0-19": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\切换演练\\运行副本\\活动旧版",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\切换演练\\运行副本\\候选新版\\battery-channel-hub.sqlite"
+    ],
+    "P0-20": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\切换演练\\运行副本"
+    ],
+    "P1-01": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite"
+    ],
+    "P1-02": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-03": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-04": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-05": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-06": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite"
+    ],
+    "P1-07": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite"
+    ],
+    "P1-08": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-09": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P1-10": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\01-纵向申请单-原始字段.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\02-扁平申请汇总-有效.xlsx"
+    ],
+    "P1-11": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\13-文件夹混合导入"
+    ],
+    "P1-12": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\02-扁平申请汇总-有效.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\运行输出\\导出"
+    ],
+    "P1-13": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\运行输出\\导出"
+    ],
+    "P1-14": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P1-15": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "ST-01": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "ST-02": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "ST-03": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "ST-04": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "ST-05": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\03-100申请999子样品2000日志审计.sqlite"
+    ],
+    "P2-01": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\12-长文本与中文.xlsx"
+    ],
+    "P2-02": [
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\01-26设备529通道空基线.sqlite",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\Excel\\13-文件夹混合导入\\损坏.xlsx",
+      "C:\\Users\\Administrator\\Desktop\\电池测试通道预约与使用看板\\.worktrees\\main-differential-recovery\\人工回归数据包\\v0.4.2\\SQLite\\02-事务与状态迁移.sqlite"
+    ],
+    "P2-03": [
+      "无需外部数据包（使用当前隔离测试状态或人工操作）"
+    ],
+    "P2-04": [
+      "无需外部数据包（使用当前隔离测试状态或人工操作）"
+    ]
+  },
+  "files": {
+    "SQLite/01-26设备529通道空基线.sqlite": "60a8a011b7b6b7829a804d6b6558ed7183601d758d52f497893097aaeb254d5d",
+    "SQLite/02-事务与状态迁移.sqlite": "0518f2e46133718a08beab31bb38baeef65c11e2c5d6f6c4a64fe633f25a871d",
+    "SQLite/03-100申请999子样品2000日志审计.sqlite": "ed3d3045c93c65ef214a5eb965a5e79da004f7e6ebd18c6d025f984172c5dfd6",
+    "Excel/01-纵向申请单-原始字段.xlsx": "50ccd8002abf236357836009bd7b8638e36e6fbe7a22b79f5ef06de2144ae46e",
+    "Excel/02-扁平申请汇总-有效.xlsx": "c931ef87f0826cdfbf2e33fd486936eb9ac6f2aab29772e9e9ed0ec7d57d9107",
+    "Excel/03-数量边界-1.xlsx": "99adec1bd42b7133a60d5fe58173fcc37f3e9b3c09287c6237f273d249a2330b",
+    "Excel/04-数量边界-999.xlsx": "f95175a189267e44f21af8538f1cafe0c5276725e0d16347c97b20ba9b597c39",
+    "Excel/05-数量非法-0.xlsx": "9e8e51e2b1362154a05b012710afaeee0052fdaea523adba2f95c616489778e5",
+    "Excel/06-数量非法-1000.xlsx": "098a63c72ed06c8913174723f0fd53f21d9a0fd48b7954951986fb9e0790ba80",
+    "Excel/07-数量非法-小数.xlsx": "fc31dfd9cea27932d7f124ad214328c57f7778f1a1041d9b307d82c5ee65a58a",
+    "Excel/08-数量非法-非数字.xlsx": "7646fef91e8b041a08ea19122eed5d3cf9b0b8cb339abadd20a42b14ae098d18",
+    "Excel/09-多样品原子预约.xlsx": "cf44f7edf98f0c1ab7f354859b48933958502451747d5ca0369c897b2597b11c",
+    "Excel/10-覆盖导入-原版.xlsx": "1b7dd5e1fcae24d23d954f87f53965e76b8f44d9a3bd9dd56e8db7ee7c6372d2",
+    "Excel/11-覆盖导入-新版.xlsx": "89875dcb4f0a787f05e4993c6d4940f5b9402b4d55d7bf60435cd701b0557002",
+    "Excel/12-长文本与中文.xlsx": "3448e9eebfd91888e0c5bef93ce976187c49f5baa4b38bb3acd7d5325b503e1e",
+    "Excel/13-文件夹混合导入/有效-根目录.xlsx": "9974e57e0844666f4ca930ab9734b56d5de11f0c9260a0c0ba0e6298a32dcd98",
+    "Excel/13-文件夹混合导入/子目录/有效-子目录.xlsx": "0ac67f261babba8ce83488e4e9f98e220594ddbacac660821a14c94d0e13e365",
+    "Excel/13-文件夹混合导入/空白.xlsx": "0e75841b96506167c84f332db807b3b9b2a33792e62e08e88bff4cfc3887f2e0",
+    "Excel/13-文件夹混合导入/损坏.xlsx": "125d0369a9aae3283383d2770d3fa4ace2eec0e5855190af83e10184bde39aae",
+    "Excel/13-文件夹混合导入/~$锁文件.xlsx": "4683047cf8171213aa003acd8aca3b5bb8fb667b04e6234ef41afb058a7fe050",
+    "备份/01-正常恢复包.batterydata": "982b646f2cc66afb63c5da6d3544be005168ed6c03df1584f445abb4c6810913",
+    "备份/02-篡改校验失败.batterydata": "126bd760749d8c5a704a094c0d31e78fdef857545c8f13bc6431d7c9118861ef",
+    "切换演练/母版/活动旧版/battery-channel-hub.sqlite": "bcbaadb1aeb0a26eb1e5ad9ee97f2de838c09a15021daaff8ad4d508dedd0206",
+    "切换演练/母版/活动旧版/程序标记.bin": "663f4b699277b5c51c2334cb996ddbe0f037f695c78b5ee5b98c95a9d2bc2974",
+    "切换演练/母版/候选新版/battery-channel-hub.sqlite": "b66f4fb44b968edf1bdee15bc689c45b2dc73699e3b80022c81f8712ecbfd525",
+    "切换演练/母版/候选新版/程序标记.bin": "0160e57f5c4cb5a435f3e7ca093110c4a8129077310b3de03596164ba1ad8f4e",
+    "切换演练/运行副本/活动旧版/battery-channel-hub.sqlite": "bcbaadb1aeb0a26eb1e5ad9ee97f2de838c09a15021daaff8ad4d508dedd0206",
+    "切换演练/运行副本/活动旧版/程序标记.bin": "663f4b699277b5c51c2334cb996ddbe0f037f695c78b5ee5b98c95a9d2bc2974",
+    "切换演练/运行副本/候选新版/battery-channel-hub.sqlite": "b66f4fb44b968edf1bdee15bc689c45b2dc73699e3b80022c81f8712ecbfd525",
+    "切换演练/运行副本/候选新版/程序标记.bin": "0160e57f5c4cb5a435f3e7ca093110c4a8129077310b3de03596164ba1ad8f4e",
+    "失败路径/not-a-directory.blocker": "31d12bf0513290eb11b6f2eb635239152cf525bdf59275808a0c42da550f6d18",
+    "失败路径/只读目录/说明.txt": "09d5e41e589af4f28238a3c43e2463b40b8b7837ff8d86498893571e7778e28a"
+  }
+}

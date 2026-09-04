@@ -1,0 +1,92 @@
+{
+  "format": "battery-channel-hub-legacy-backup",
+  "version": 1,
+  "createdAt": "2026-08-31T09:30:00-07:00",
+  "reason": "使用说明附件示例",
+  "sourceRevision": 1,
+  "state": {
+    "revision": 1,
+    "savedAt": "2026-08-31T09:30:00-07:00",
+    "username": "example-user",
+    "requests": [
+      {
+        "id": "APP-20260831-005",
+        "requestNo": "APP-20260831-005",
+        "project": "备份恢复示例项目",
+        "projectNo": "PRJ-2026-12",
+        "requester": "示例申请人",
+        "department": "示例部门",
+        "sampleName": "磷酸铁锂电池",
+        "sampleModel": "LFP-50Ah",
+        "qty": 2,
+        "quantity": 2,
+        "capacity": 50,
+        "testType": "循环寿命测试",
+        "start": "2026-09-12 09:00",
+        "end": "2026-10-12 18:00",
+        "status": "pending",
+        "note": "仅供备份格式演示"
+      }
+    ],
+    "samples": [
+      {
+        "id": "APP-20260831-005.001",
+        "requestNo": "APP-20260831-005",
+        "ordinal": 1,
+        "status": "pending",
+        "channelKey": "",
+        "start": "",
+        "end": "",
+        "hasHistory": false
+      },
+      {
+        "id": "APP-20260831-005.002",
+        "requestNo": "APP-20260831-005",
+        "ordinal": 2,
+        "status": "pending",
+        "channelKey": "",
+        "start": "",
+        "end": "",
+        "hasHistory": false
+      }
+    ],
+    "records": [],
+    "requestSourceRows": [],
+    "deviceProfiles": [
+      {
+        "id": "DEV-EXAMPLE-001",
+        "name": "示例设备 1#",
+        "vendor": "示例厂家",
+        "status": "enabled"
+      }
+    ],
+    "channels": [
+      {
+        "key": "示例设备 1#|001",
+        "device": "示例设备 1#",
+        "name": "001",
+        "range": "5V100A",
+        "state": "free"
+      }
+    ],
+    "auditLogs": [
+      {
+        "id": "AUDIT-EXAMPLE-001",
+        "time": "2026-08-31T09:30:00-07:00",
+        "action": "创建示例备份",
+        "actor": "example-user",
+        "result": "success"
+      }
+    ],
+    "formChangeJournal": [],
+    "testers": [
+      {
+        "id": "TESTER-EXAMPLE-001",
+        "name": "示例测试员",
+        "status": "enabled"
+      }
+    ],
+    "storageRecords": []
+  },
+  "stateSha256": "29d8216d8e57a312bce32d3cdc8f69784120ea4d42292069104120dac637cdb5"
+}

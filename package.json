@@ -1,0 +1,111 @@
+{
+  "name": "battery-channel-hub",
+  "version": "1.0.0",
+  "author": "Battery Channel Hub",
+  "description": "电池测试通道预约与使用看板便携版",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test --test-concurrency=1",
+    "test:core": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test:smoke": "node tests/smoke/full-shell-smoke.mjs",
+    "test:smoke:full-shell": "node tests/smoke/full-shell-smoke.mjs",
+    "test:smoke:reservation": "node tests/smoke/main-reservation-smoke.mjs",
+    "test:smoke:admin": "node tests/smoke/main-admin-smoke.mjs",
+    "test:smoke:data-safety": "node tests/smoke/electron-data-safety-smoke.mjs",
+    "test:smoke:storage": "node tests/smoke/main-storage-workflow-smoke.mjs",
+    "test:edge:quick": "node scripts/edge-regression/run.mjs --mode quick",
+    "test:edge:full": "node scripts/edge-regression/run.mjs --mode full",
+    "test:workflow:quick": "node tests/workflows/cli.mjs --mode quick",
+    "test:workflow:full": "node tests/workflows/cli.mjs --mode full",
+    "test:workflow:replay": "node tests/workflows/cli.mjs --mode replay",
+    "test:manual-guided:quick": "node tests/manual-guided/cli.mjs --mode quick",
+    "test:manual-guided:full": "node tests/manual-guided/cli.mjs --mode full",
+    "test:manual-guided:replay": "node tests/manual-guided/cli.mjs --mode replay",
+    "test:performance": "node --test tests/performance/*.test.mjs",
+    "migrate:dry-run": "node scripts/migrate-state.mjs",
+    "data:create-sqlite": "node scripts/create-production-sqlite.mjs",
+    "data:switch": "node scripts/switch-production-sqlite.mjs",
+    "data:regression:v043": "node scripts/generate-v043-regression-assets.mjs",
+    "dist": "electron-builder --win portable",
+    "dist:dir": "electron-builder --win dir",
+    "dist:installer": "electron-builder --win nsis",
+    "dist:uninstaller": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-uninstall-package.ps1"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "playwright-core": "^1.62.1"
+  },
+  "build": {
+    "appId": "com.battery.channelhub",
+    "productName": "电池测试通道预约与使用看板",
+    "toolsets": {
+      "winCodeSign": null
+    },
+    "artifactName": "Battery-Channel-Hub-${version}.${ext}",
+    "asar": true,
+    "extraResources": [
+      {
+        "from": "resources/使用说明",
+        "to": "使用说明",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "files": [
+      "电池测试通道预约Demo.html",
+      "feedback_patch.js",
+      "lib/device-preset.js",
+      "src/domain/sample-quantity.mjs",
+      "src/domain/reservation-policy.mjs",
+      "src/domain/legacy-reservation-transactions.mjs",
+      "src/domain/legacy-storage-transactions.mjs",
+      "src/domain/legacy-return-to-application-transactions.mjs",
+      "src/domain/legacy-request-transactions.mjs",
+      "src/domain/audit-result.mjs",
+      "src/renderer/legacy-list-selectors.mjs",
+      "src/renderer/legacy-dashboard-insights.mjs",
+      "src/renderer/legacy-bounded-views.mjs",
+      "src/renderer/legacy-storage-workbench.mjs",
+      "src/renderer/legacy-reservation-workspace.mjs",
+      "src/renderer/legacy-reservation-entry.mjs",
+      "src/main/legacy-state-schema.mjs",
+      "src/main/legacy-sqlite-store.mjs",
+      "src/main/reservation-command-service.mjs",
+      "src/main/storage-command-service.mjs",
+      "src/main/application-command-service.mjs",
+      "src/main/excel-service.mjs",
+      "src/main/dashboard-png-service.mjs",
+      "src/main/legacy-backup-service.mjs",
+      "main.js",
+      "preload.js",
+      "package.json",
+      "node_modules/xlsx/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "portable": {
+      "artifactName": "Battery-Channel-Hub-${version}-portable.${ext}"
+    },
+    "nsis": {
+      "artifactName": "Battery-Channel-Hub-${version}-setup.${ext}",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "allowScripts": {
+    "electron@37.10.3": true,
+    "electron-winstaller@5.4.0": true
+  }
+}

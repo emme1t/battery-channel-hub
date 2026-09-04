@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Battery Channel Hub · 自动回归</title>
+  <link rel="stylesheet" href="/control/console.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">BATTERY CHANNEL HUB</p>
+      <h1>Edge HTML 自动回归</h1>
+    </div>
+    <button id="stopRun" type="button">停止当前运行</button>
+  </header>
+  <main>
+    <section class="summary" aria-label="运行摘要">
+      <article><span>Run ID</span><strong id="runId">加载中</strong></article>
+      <article><span>模式</span><strong id="mode">—</strong></article>
+      <article><span>进度</span><strong id="progress">0 / 52</strong></article>
+      <article><span>状态</span><strong id="runStatus">连接中</strong></article>
+    </section>
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>场景执行明细</h2>
+          <p id="updatedAt">等待测试宿主状态</p>
+        </div>
+        <a href="/app/" target="_blank" rel="noreferrer">打开受测页面</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>编号</th><th>场景</th><th>执行面</th><th>结果</th><th>耗时</th></tr></thead>
+          <tbody id="scenarioRows"><tr><td colspan="5" class="empty">等待场景清单</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <p id="consoleError" class="error" role="alert"></p>
+  </main>
+  <script type="module" src="/control/console.mjs"></script>
+</body>
+</html>

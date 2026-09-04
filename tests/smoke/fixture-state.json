@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "dataRevision": 0,
+  "username": "Smoke Tester",
+  "requests": [
+    {
+      "requestNo": "SMOKE-001",
+      "project": "笔记本预约页验证",
+      "testName": "循环寿命",
+      "sampleModel": "Smoke Cell",
+      "quantity": 2,
+      "expectedStart": "2026-08-20T09:00:00-07:00",
+      "rawFields": { "委托人": "Smoke" },
+      "execution": {},
+      "sourceFileName": "smoke.xlsx",
+      "sourceFilePath": "C:\\smoke\\smoke.xlsx"
+    }
+  ],
+  "samples": [
+    {
+      "id": "SMOKE-001.001",
+      "requestNo": "SMOKE-001",
+      "ordinal": 1,
+      "status": "pending",
+      "channelKey": "",
+      "start": "",
+      "end": "",
+      "hasHistory": false
+    },
+    {
+      "id": "SMOKE-001.002",
+      "requestNo": "SMOKE-001",
+      "ordinal": 2,
+      "status": "pending",
+      "channelKey": "",
+      "start": "",
+      "end": "",
+      "hasHistory": false
+    }
+  ],
+  "devices": [
+    {
+      "id": "SMOKE-DEVICE",
+      "name": "Smoke 设备",
+      "manufacturer": "Smoke"
+    }
+  ],
+  "channels": [
+    {
+      "key": "SMOKE-DEVICE|001",
+      "deviceId": "SMOKE-DEVICE",
+      "deviceName": "Smoke 设备",
+      "name": "001",
+      "state": "free",
+      "end": "",
+      "currentRecordId": "",
+      "spec": "5V / 100A"
+    }
+  ],
+  "records": [],
+  "audits": [],
+  "requestSourceRows": []
+}

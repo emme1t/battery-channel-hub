@@ -1,0 +1,22 @@
+{
+  "version": "v0.4.3",
+  "generatedAt": "2026-08-21T17:00:00.000Z",
+  "files": [
+    {
+      "path": "SQLite/04-及时率筛选与预约待办.sqlite",
+      "bytes": 139264,
+      "sha256": "2004172352bb1cbec2fc0d18e6b208c1d5339f9d7e6e9a35ce8e16df29b4adb1",
+      "expected": {
+        "devices": 26,
+        "channels": 529,
+        "requests": 4,
+        "samples": 15,
+        "records": 15,
+        "timely": 1,
+        "late": 1,
+        "missingPlan": 1,
+        "reservedTodo": 12
+      }
+    }
+  ]
+}

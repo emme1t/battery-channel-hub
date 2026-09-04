@@ -1,0 +1,58 @@
+# Dependencies and local build products
+node_modules/
+dist/
+dist-todo-fix/
+build-portable/
+coverage/
+
+# Runtime state and generated evidence
+outputs/
+data/
+自动测试报告/
+人工回归数据包/*/运行输出/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+*.tmp
+*.tap
+*.dmp
+*.dump
+*.batterydata
+!resources/使用说明/文件样式/*.batterydata
+
+# Credentials and machine-local configuration
+.env
+.env.*
+mail_tester.env
+*.secret
+*.pem
+*.p12
+*.key
+
+# Internal planning, recovery and test notes
+项目进度.md
+AGENTS.md
+.superpowers/
+docs/superpowers/
+docs/wt-*/
+docs/release/
+tmp-clean-sim/
+sheet-work/
+ui-preview-v0.1/
+.worktrees/
+/20??????-*.md
+/需求基线*.md
+/电池测试通道预约与使用看板_需求文档.md
+/疑问汇总.pptx
+/电芯测试申请单.docx
+/测试设备使用表*.png
+/测试申请表格.png
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/

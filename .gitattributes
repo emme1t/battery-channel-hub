@@ -1,0 +1,22 @@
+* text=auto
+
+*.js text eol=lf
+*.cjs text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+
+*.png binary
+*.xlsx binary
+*.docx binary
+*.pptx binary
+*.asar binary
+*.exe binary
+
+# 人工回归夹具由 SHA256SUMS.json 校验，禁止换行或文本过滤改变字节。
+/人工回归数据包/v0.4.2/** -text
+/人工回归数据包/v0.4.3/** -text
+
+# 安装包内使用说明附件必须与经验证的桌面样例逐字节一致。
+/resources/使用说明/文件样式/** binary
